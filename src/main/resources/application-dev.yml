@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc：mysql://localhost:3306/caesar_dev
+    url: jdbc:mysql://localhost:3306/caesar_dev
     username: caesar_dev_user
-    passward: lt
+    passward: 123456
 
   jpa:
     hibernate:
