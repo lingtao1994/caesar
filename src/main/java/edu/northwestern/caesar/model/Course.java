@@ -13,15 +13,15 @@ import java.util.Set;
 
 @Data
 @Entity
-@Table(name = "Courses")
-public class Courses extends BaseEntity{
+@Table(name = "courses")
+public class Course extends BaseEntity{
 
-    @Column(name = "uosCode")
+    @Column(name = "uoscode")
     private String uosCode;
 
     @Column(name = "semester")
     private String semester;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "Courses" )
-    private Set<Courses> courses = new HashSet<>();
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "courses" )
+    private Set<Course> courses = new HashSet<>();
 }

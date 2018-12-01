@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/caesar_dev
     username: caesar_dev_user
-    passward: 123456
+    passward: lt
 
   jpa:
     hibernate:

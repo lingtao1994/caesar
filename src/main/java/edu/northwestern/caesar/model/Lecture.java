@@ -4,8 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+
 
 /**
  * Created by LT on 2018/11/12
@@ -13,19 +12,19 @@ import java.util.Set;
 @Getter
 @Setter
 @Entity
-@Table(name = "Lectures")
-public class Lectures extends BaseEntity{
+@Table(name = "lectures")
+public class Lecture extends BaseEntity{
 
     @ManyToOne
     @JoinColumn(name = "courses_id")
     private Course course;
 
-    @Column(name = "classroomId")
+    @Column(name = "classroomid")
     private String classroomId;
 
     @Column(name = "year")
     private int year;
 
-    @Column(name = "classTime")
+    @Column(name = "classtime")
     private String classTime;
 }

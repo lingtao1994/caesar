@@ -11,8 +11,8 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Entity
-@Table(name = "Students")
-public class Students extends BaseEntity{
+@Table(name = "students")
+public class Student extends BaseEntity{
 
 
     @Column(name = "name")

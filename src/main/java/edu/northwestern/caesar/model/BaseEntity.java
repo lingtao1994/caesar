@@ -1,8 +1,21 @@
 package edu.northwestern.caesar.model;
 
+import lombok.Data;
+
+import javax.persistence.*;
+import java.io.Serializable;
+
 /**
  * @author LT
  * @Date on 2018/12/1
  */
-public class baseEntity {
+@Data
+@MappedSuperclass
+public class BaseEntity implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
+
 }
