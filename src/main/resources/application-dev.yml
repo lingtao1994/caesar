@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc：mysql://localhost:3306/caesar_dev
+    username: caesar_dev_user
+    passward: lt
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    database: mysql
+    show-sql: true
