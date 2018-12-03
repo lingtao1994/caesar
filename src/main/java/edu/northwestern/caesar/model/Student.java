@@ -15,6 +15,9 @@ import javax.persistence.*;
 public class Student extends BaseEntity{
 
 
+    @Column(name = "userName")
+    private String userName;
+
     @Column(name = "name")
     private String name;
 
