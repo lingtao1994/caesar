@@ -10,8 +10,9 @@ import javax.persistence.*;
  */
 @Getter
 @Setter
+@Entity
 @Table(name = "uosofferings")
-public class UosOffering {
+public class UosOffering extends BaseEntity {
 
     @ManyToOne
     @JoinColumn(name = "courses_id")
