@@ -20,10 +20,29 @@ public class StudentServiceImp implements StudentService{
         this.studentRepository = studentRepository;
     }
 
-    public Set<Student> findAll(){
-        Set<Student> students = new HashSet<>();
-        studentRepository.findAll().forEach(students::add);
-        return students;
+    @Override
+    public Student findById(Long id){
+
+        return studentRepository.findById(id).orElse(null);
     }
+
+    @Override
+    public Student findByUserName(String userName) {
+        return studentRepository.findByuserName(userName);
+    }
+
+    @Override
+    public Student checkPw(String userName, String passWord){
+
+        Student stu = findByUserName(userName);
+
+        if(passWord == stu.getPassword()){
+            return stu;
+        }else{
+            return null;
+        }
+
+    }
+
 
 }
