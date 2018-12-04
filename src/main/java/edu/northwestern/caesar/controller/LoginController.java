@@ -4,7 +4,6 @@ import edu.northwestern.caesar.model.Student;
 import edu.northwestern.caesar.services.StudentService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -21,7 +20,7 @@ public class LoginController {
         this.studentService = studentService;
     }
 
-    @RequestMapping({"", "/", "/login.html"})
+    @RequestMapping({"", "/", "/login"})
     public String showLogIn(Model model){
 
         model.addAttribute("student", new Student());
@@ -32,14 +31,13 @@ public class LoginController {
 
 
     @GetMapping
-    public String logIn(Model model, Student student){
+    public String logIn(Student student){
 
         Student stu = studentService.checkPw(student.getUserName(), student.getPassword());
 
         if(stu == null){
             return "login";
         }else{
-
             return "redirect:/" + stu.getId();
         }
 
