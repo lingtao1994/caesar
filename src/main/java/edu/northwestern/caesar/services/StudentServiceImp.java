@@ -4,9 +4,6 @@ import edu.northwestern.caesar.model.Student;
 import edu.northwestern.caesar.repositories.StudentRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * @author LT
  * @Date on 2018/12/2
@@ -32,13 +29,20 @@ public class StudentServiceImp implements StudentService{
     }
 
     @Override
-    public Student checkPw(String userName, String passWord){
+    public Student checkPw(String userName, String password){
 
         Student stu = findByUserName(userName);
 
-        if(passWord == stu.getPassword()){
+        System.out.println("step 1");
+
+        if(stu == null) {
+            System.out.println("stu == null");
+            return null;
+        } else if (password.equals(stu.getPassword())) {
+            System.out.println("password match");
             return stu;
         }else{
+            System.out.println("password not match");
             return null;
         }
 

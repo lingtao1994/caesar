@@ -1,15 +1,7 @@
 package edu.northwestern.caesar.controller;
 
-import edu.northwestern.caesar.model.Student;
-import edu.northwestern.caesar.repositories.StudentRepository;
 import edu.northwestern.caesar.services.StudentService;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @author LT
@@ -23,7 +15,7 @@ public class StudentController {
     public StudentController(StudentService studentService) {
         this.studentService = studentService;
     }
-//  github test
+
 //    @RequestMapping({"/student"})
 //    public String stuInfo(Model model){
 //
