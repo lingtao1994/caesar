@@ -7,6 +7,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.validation.Valid;
+
 /**
  * @author LT
  * @Date on 2018/11/30
@@ -31,7 +33,7 @@ public class LoginController {
 
 
     @GetMapping
-    public String logIn(Student student){
+    public String logIn(@Valid Student student){
 
         Student stu = studentService.checkPw(student.getUserName(), student.getPassword());
 

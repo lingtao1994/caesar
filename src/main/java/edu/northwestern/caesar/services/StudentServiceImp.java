@@ -48,5 +48,11 @@ public class StudentServiceImp implements StudentService{
 
     }
 
+    @Override
+    public Student save(Student student){
+
+        return studentRepository.save(student);
+    }
+
 
 }

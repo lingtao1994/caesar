@@ -15,4 +15,6 @@ public interface StudentService {
 
     Student checkPw(String userName, String passWord);
 
+    Student save(Student student);
+
 }
