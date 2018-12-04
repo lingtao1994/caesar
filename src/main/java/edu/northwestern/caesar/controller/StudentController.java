@@ -23,7 +23,7 @@ public class StudentController {
     public StudentController(StudentService studentService) {
         this.studentService = studentService;
     }
-
+//  github test
 //    @RequestMapping({"/student"})
 //    public String stuInfo(Model model){
 //
