@@ -26,15 +26,15 @@ public class StuInfoController {
         this.studentService = studentService;
     }
 
-    @RequestMapping({"menu/{stuId}/info"})
+    @RequestMapping({"students/{stuId}/info"})
     public String stuInfo(@PathVariable Long stuId,  Model model){
 
         model.addAttribute("studentInfo", studentService.findById(stuId));
 
-        return "redirect:/menu/infoDetail" + stuId;
+        return "redirect:/students/infoDetail" + stuId;
     }
 
-    @GetMapping("menu/infoDetail/{stuId}/edit")
+    @GetMapping("students/infoDetail/{stuId}/edit")
     public String initUpdateForm(@PathVariable Long stuId, Model model){
 
         model.addAttribute("studentInfo", studentService.findById(stuId));
@@ -42,13 +42,13 @@ public class StuInfoController {
         return VIEWS_STUDENTS_CREATE_OR_UPDATE_FORM;
     }
 
-    @PostMapping("menu/infoDetail/{stuId}/edit")
+    @PostMapping("students/infoDetail/{stuId}/edit")
     public String processUpeateForm(@Valid Student student, @PathVariable Long stuId){
 
         student.setId(stuId);
         Student savedInfo = studentService.save(student);
 
-        return "redirect:/menu/infoDetail" + stuId;
+        return "redirect:/students/infoDetail" + savedInfo.getId();
     }
 
 
