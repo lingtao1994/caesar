@@ -10,6 +10,6 @@ import java.util.List;
  */
 public interface LectureService {
 
-    List<Lecture> findByTime(Long semester, Long year);
+//    List<Lecture> findByTime(Long semester, Long year);
 
 }
