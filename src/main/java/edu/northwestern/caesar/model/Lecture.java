@@ -14,10 +14,12 @@ import javax.persistence.*;
 @Entity
 @Table(name = "lectures")
 public class Lecture extends BaseEntity{
+    
+    @Column(name = "uoscode")
+    private String uosCode;
 
-    @ManyToOne
-    @JoinColumn(name = "courses_id")
-    private Course course;
+    @Column(name = "semester")
+    private String semester;
 
     @Column(name = "classroomid")
     private String classroomId;
