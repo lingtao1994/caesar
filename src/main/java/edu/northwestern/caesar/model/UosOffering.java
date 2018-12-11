@@ -14,9 +14,11 @@ import javax.persistence.*;
 @Table(name = "uosofferings")
 public class UosOffering extends BaseEntity {
 
-    @ManyToOne
-    @JoinColumn(name = "courses_id")
-    private Course course;
+    @Column(name = "uoscode")
+    private String uosCode;
+
+    @Column(name = "semester")
+    private String semester;
 
     @Column(name = "year")
     private int year;

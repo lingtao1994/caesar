@@ -21,9 +21,20 @@ public class Transcript extends BaseEntity {
     @OneToOne
     private Student student;
 
+    @Column(name = "uoscode")
+    private String uosCode;
 
-    @OneToOne
-    private Lecture lecture;
+    @Column(name = "semester")
+    private String semester;
+
+    @Column(name = "classroomid")
+    private String classroomId;
+
+    @Column(name = "year")
+    private int year;
+
+    @Column(name = "classtime")
+    private String classTime;
 
     @Column(name = "grade")
     private double grade;
