@@ -15,6 +15,7 @@ import javax.validation.Valid;
  * @author LT
  * @Date on 2018/12/2
  */
+@RequestMapping("/students")
 @Controller
 public class StuInfoController {
 
@@ -26,29 +27,32 @@ public class StuInfoController {
         this.studentService = studentService;
     }
 
-    @RequestMapping({"students/{stuId}/info"})
-    public String stuInfo(@PathVariable Long stuId,  Model model){
+    @RequestMapping({"{stuId}/infoDetail"})
+    public String stuInfo(@PathVariable Long stuId, Model model){
+    //public ModelAndView stuInfo(@PathVariable Long stuId){
+//        ModelAndView mav = new ModelAndView("students/studentDetails");
+//        mav.addObject(studentService.findById(stuId));
+//        return mav;
 
-        model.addAttribute("studentInfo", studentService.findById(stuId));
-
-        return "redirect:/students/infoDetail" + stuId;
+        model.addAttribute(studentService.findById(stuId));
+        return "/students/studentDetails";
     }
 
-    @GetMapping("students/infoDetail/{stuId}/edit")
+    @GetMapping("/{stuId}/edit")
     public String initUpdateForm(@PathVariable Long stuId, Model model){
 
-        model.addAttribute("studentInfo", studentService.findById(stuId));
+        model.addAttribute(studentService.findById(stuId));
 
         return VIEWS_STUDENTS_CREATE_OR_UPDATE_FORM;
     }
 
-    @PostMapping("students/infoDetail/{stuId}/edit")
-    public String processUpeateForm(@Valid Student student, @PathVariable Long stuId){
+    @PostMapping("/{stuId}/edit")
+    public String processUpdateForm(@Valid Student student, @PathVariable Long stuId){
 
         student.setId(stuId);
         Student savedInfo = studentService.save(student);
 
-        return "redirect:/students/infoDetail" + savedInfo.getId();
+        return "redirect:/students/" + savedInfo.getId() + "/infoDetail";
     }
 
 
