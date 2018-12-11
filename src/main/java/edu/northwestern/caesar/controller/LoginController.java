@@ -40,8 +40,8 @@ public class LoginController {
         if(stu == null){
             return "login";
         }else{
-           // return "redirect:/menu/" + stu.getId();
-            return "menu";
+           return "redirect:/menu/" + stu.getId();
+
         }
 
     }
